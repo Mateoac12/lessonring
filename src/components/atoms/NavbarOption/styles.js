@@ -7,22 +7,34 @@ export const OptionBox = styled.li`
 `
 
 export const Option = styled(Link)`
-  padding: ${global.p[2]} ${global.p[3]};
-  margin: 0 ${global.m[1]};
-  background-color: ${global.color.gray[1]};
+  padding: 8px 16px;
+  margin: 2px 0;
+  display: block;
   color: ${global.color.primary};
   font-size: 18px;
   text-decoration: none;
-  border-radius: ${global.r[2]};
   transition: filter 0.2s ease;
 
   :hover {
     filter: brightness(0.95);
   }
+
+  @media (min-width: ${global.breackpoint.mobile}) {
+    display: inline-block;
+    padding: ${global.p[2]} ${global.p[3]};
+    margin: 0 ${global.m[1]};
+    background-color: ${global.color.gray[1]};
+    border-radius: ${global.r[2]};
+  }
 `
 
 export const ArrowIcon = styled.img`
-  width: 12px;
-  margin-bottom: 2px;
-  margin-left: 8px;
+  display: none;
+
+  @media (min-width: ${global.breackpoint.mobile}) {
+    display: inline;
+    width: 12px;
+    margin-bottom: 2px;
+    margin-left: 8px;
+  }
 `

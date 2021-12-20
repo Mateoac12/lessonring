@@ -3,10 +3,14 @@ import { global } from 'theme/global'
 
 export const HeaderBox = styled.header`
   background-color: ${global.color.gray[1]};
+  height: 60px;
+  display: flex;
+  align-items: center;
 `
 
 export const ContentBox = styled.div`
   display: flex;
+  width: 100%;
   align-items: center;
   max-width: ${global.container['2xl']};
   margin-left: auto;
@@ -15,5 +19,7 @@ export const ContentBox = styled.div`
 `
 
 export const Spacer = styled.div`
-  flex: 1;
+  @media (min-width: ${global.breackpoint.mobile}) {
+    flex: 1;
+  }
 `

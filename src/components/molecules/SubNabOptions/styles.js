@@ -2,9 +2,14 @@ import styled from '@emotion/styled'
 import { global } from 'theme/global'
 
 export const MenuBox = styled.div`
-  position: absolute;
-  top: 100%;
-  left: 0;
+  display: none;
+
+  @media (min-width: ${global.breackpoint.mobile}) {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
 `
 
 export const Menu = styled.ul`
