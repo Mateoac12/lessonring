@@ -26,4 +26,7 @@ export const global = {
   container: {
     '2xl': '1536px',
   },
+  breackpoint: {
+    mobile: '950px',
+  },
 }
