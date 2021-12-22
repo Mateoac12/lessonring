@@ -1,14 +1,18 @@
 import NavbarOption from "components/atoms/NavbarOption"
-import { NAVBAR_OPTIONS } from "config/interface/navbar"
 import { useDropdown } from "hook/useDropdown"
 
 import menuIcon from 'assets/symbols/menu.svg'
 import cancelIcon from 'assets/symbols/cancel.svg'
 
 import { MenuIcon, ModalButton, Navbar } from "./styles"
+import Placeholder from "./Placeholder"
+import { useCategories } from "hook/useCategories"
 
 const NavbarOptions = () => {
   const { isShow, toggleMenu } = useDropdown()
+  const { categories, isLoading } = useCategories()
+
+  if (isLoading) return <Placeholder />
 
   return <>
     <ModalButton onClick={toggleMenu}>
@@ -20,7 +24,7 @@ const NavbarOptions = () => {
     </ModalButton>
     <Navbar show={isShow}>
       {
-        NAVBAR_OPTIONS.map(option =>
+        categories.map(option =>
           <NavbarOption key={option.id} {...option} />
         )
       }

@@ -3,11 +3,11 @@ import arrowIcon from "assets/symbols/arrow-down.svg"
 import SubNavOptions from "components/molecules/SubNabOptions"
 import { ArrowIcon, Option, OptionBox } from "./styles"
 
-const NavbarOption = ({ name, path, menu }) => {
+const NavbarOption = ({ name, path, subcategories }) => {
   const { isShow, setHide, setShow } = useDropdown()
 
-  const showOptions = isShow && menu
-  const haveOptions = menu && menu.length > 0
+  const haveOptions = subcategories && subcategories.length > 0
+  const showOptions = isShow && haveOptions
 
   return <OptionBox onMouseEnter={setShow} onMouseLeave={setHide}>
     <Option href={path}>
@@ -15,7 +15,7 @@ const NavbarOption = ({ name, path, menu }) => {
       {haveOptions && <ArrowIcon src={arrowIcon} alt="arrow" />}
     </Option>
     {
-      showOptions && <SubNavOptions menu={menu} show={setShow} hide={setHide} />
+      showOptions && <SubNavOptions subcategories={subcategories} show={setShow} hide={setHide} />
     }
   </OptionBox>
 }
