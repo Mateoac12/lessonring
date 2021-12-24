@@ -23,6 +23,18 @@
       "relation": "manyToMany",
       "target": "api::subcategory.subcategory",
       "mappedBy": "categories"
+    },
+    "podcasts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::podcast.podcast",
+      "mappedBy": "category"
+    },
+    "courses": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::course.course",
+      "mappedBy": "category"
     }
   }
 }
