@@ -1,13 +1,15 @@
-import { BoxInformation, EducationIcon, HeaderText, MainTitle, TextInformation, TitleInformation } from "./styles"
+import { BoxInformation, EducationIcon, HeaderText, TextInformation, TitleInformation } from "./styles"
 import educationIcon from "assets/menuIcons/education.svg"
 import { useProgrammingRoadmap } from "hook/useProgrammingRoadmap"
+import RoadmapList from "components/layout/RoadmapList"
+import MainTitle from "components/atoms/MainTitle"
 
 const HomePage = () => {
   const { isLoading, programmingRoadmap } = useProgrammingRoadmap()
 
   return <>
     <HeaderText>
-      <MainTitle data-text="Recopilación de todo el material educativo que recomiendo!">Recopilación de todo el material educativo que recomiendo!</MainTitle>
+      <MainTitle>Recopilación de todo el material educativo que recomiendo!</MainTitle>
       <EducationIcon src={educationIcon} />
     </HeaderText>
     <BoxInformation>
@@ -17,13 +19,7 @@ const HomePage = () => {
     {
       isLoading ?
         <div>Cargando...</div>
-        : <>
-          {
-            programmingRoadmap.map(({ id, courses }) => <article key={id}>
-              <p>{courses.name}</p>
-            </article>)
-          }
-        </>
+        : <RoadmapList roadmap={programmingRoadmap} />
     }
   </>
 }
