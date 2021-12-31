@@ -4,10 +4,10 @@ import qs from 'qs'
  * @description Generate query string from array
  * @param {string[]} queries
  */
-export const generateQuery = (queries = []) => {
+export const generateQuery = ({ fieldName, queries = [] } = {}) => {
   const query = qs.stringify(
     {
-      populate: queries,
+      [fieldName]: queries,
     },
     {
       encodeValuesOnly: true,
