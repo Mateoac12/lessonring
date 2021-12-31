@@ -1,7 +1,6 @@
 import { Card, CardIcon, CardTitle } from "./styles"
 
 const TargetCouse = ({ course, id }) => {
-  console.log({ course })
   return <>
     <Card id={id}>
       <CardTitle>{course.name}</CardTitle>
