@@ -21,18 +21,6 @@
     "url": {
       "type": "string"
     },
-    "category": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::category.category",
-      "inversedBy": "courses"
-    },
-    "subcategory": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::subcategory.subcategory",
-      "inversedBy": "courses"
-    },
     "image": {
       "type": "media",
       "multiple": false,

@@ -1,7 +1,10 @@
 import { generateQuery } from './utils/generateQuery'
 
 export const getProgrammingRoadmap = async () => {
-  const query = generateQuery(['courses', 'courses.icon'])
+  const query = generateQuery({
+    fieldName: 'populate',
+    queries: ['courses', 'courses.icon'],
+  })
 
   return await fetch(`http://localhost:1337/api/programming-roadmaps?${query}`)
     .then((res) => res.json())

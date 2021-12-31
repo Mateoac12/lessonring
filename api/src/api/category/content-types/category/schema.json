@@ -15,26 +15,13 @@
     "name": {
       "type": "string"
     },
-    "path": {
-      "type": "string"
-    },
     "subcategories": {
       "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::subcategory.subcategory",
-      "mappedBy": "categories"
-    },
-    "podcasts": {
-      "type": "relation",
       "relation": "oneToMany",
-      "target": "api::podcast.podcast",
-      "mappedBy": "category"
+      "target": "api::subcategory.subcategory"
     },
-    "courses": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::course.course",
-      "mappedBy": "category"
+    "description": {
+      "type": "text"
     }
   }
 }
